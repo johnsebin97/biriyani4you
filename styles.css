@@ -68,7 +68,7 @@ nav {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('biriyani-bg.jpg') center/cover no-repeat;
+                url('Images/main.jpeg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +76,6 @@ nav {
     text-align: center;
     color: var(--white);
     padding: 0 20px;
-    background-attachment: fixed;
 }
 
 .hero-content {
@@ -504,5 +503,70 @@ footer {
     
     .parallax-content p {
         font-size: 1rem;
+    }
+}
+
+.empty-banner {
+    height: 60px;
+    background: #f5f5f5;
+    width: 100%;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 4px 0;
+    background: var(--maroon);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        height: calc(100vh - 70px);
+        z-index: 1050;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .nav-links.open {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .nav-links a {
+        margin: 20px 0 0 0;
+        font-size: 1.1rem;
+        color: var(--maroon);
+    }
+    nav {
+        padding: 15px 20px;
     }
 } 

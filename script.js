@@ -4,7 +4,8 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 1000,
     delay: 200,
-    reset: true
+    reset: false,
+    once: true
 });
 
 // Reveal elements on scroll
@@ -93,7 +94,7 @@ if (emailForm) {
 window.addEventListener('scroll', function() {
     const hero = document.querySelector('.hero');
     const scrolled = window.pageYOffset;
-    hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+    hero.style.backgroundPositionY = scrolled * 0.13 + 'px';
 });
 
 // Enhanced parallax effects
@@ -268,4 +269,14 @@ document.addEventListener('DOMContentLoaded', function() {
     sliderTrack.addEventListener('mouseleave', () => {
         startAutoSlide();
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('open');
+        });
+    }
 }); 
